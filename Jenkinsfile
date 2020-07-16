@@ -9,7 +9,7 @@ pipeline {
       }
       stage('branch name') {
          steps {
-            echo '${env.BRANCH_NAME}'
+            echo 'branch_name' + env.BRANCH_NAME
          }
       }
    }
