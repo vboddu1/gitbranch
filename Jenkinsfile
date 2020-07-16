@@ -9,7 +9,7 @@ pipeline {
       }
       stage('branch name') {
          steps {
-            env.BRANCH_NAME
+            + env.BRANCH_NAME
          }
       }
    }
