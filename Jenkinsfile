@@ -1,6 +1,6 @@
 pipeline {
    agent any
-
+       def readversion;
    stages {
       stage('git checkout') {
          steps {
@@ -9,9 +9,8 @@ pipeline {
       }
       stage('branch name') {
          steps {
-            readFile encoding: 'Base64', file: 'package.json'
+            readversion = readFile encoding: 'Base64', file: 'package.json'
             echo env.BRANCH_NAME
-            echo version
       }
    }
 }
