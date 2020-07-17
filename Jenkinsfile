@@ -1,4 +1,4 @@
-def output;
+def input = '1.0.1';
 pipeline {
    agent any
    stages {
@@ -10,8 +10,8 @@ pipeline {
       stage('branch name') {
          steps {
             echo env.BRANCH_NAME
-            output = readJSON text: version
-            echo "${output}"
+            //output = readJSON text: version
+            echo "${input}"
       }
    }
 }
