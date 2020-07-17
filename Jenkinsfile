@@ -1,3 +1,4 @@
+def output;
 pipeline {
    agent any
    stages {
