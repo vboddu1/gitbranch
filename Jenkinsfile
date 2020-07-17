@@ -11,7 +11,7 @@ pipeline {
          steps {
             readFile encoding: 'Base64', file: 'package.json'
             echo env.BRANCH_NAME
-            echo ${version}
+            echo version
       }
    }
 }
