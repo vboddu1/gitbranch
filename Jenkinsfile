@@ -9,7 +9,7 @@ pipeline {
       }
       stage('branch name') {
          steps {
-            readFile encoding: 'version', file: 'package.json'
+            readFile encoding: 'Base64', file: 'package.json'
             echo env.BRANCH_NAME      
       }
    }
