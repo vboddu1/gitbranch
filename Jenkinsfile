@@ -9,7 +9,7 @@ pipeline {
       stage('branch name') {
          steps {
             echo env.BRANCH_NAME
-            def readversion = readJSON file: 'package.json'
+            def readversion = readJSON file: 'package.json', text: 'version'
       }
    }
 }
