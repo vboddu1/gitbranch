@@ -1,3 +1,4 @@
+def readversion;
 pipeline {
    agent any
    stages {
@@ -9,7 +10,7 @@ pipeline {
       stage('branch name') {
          steps {
             echo env.BRANCH_NAME
-            def readversion = readJSON file: 'package.json', text: 'version'
+            readversion = readJSON file: 'package.json', text: 'version'
       }
    }
 }
