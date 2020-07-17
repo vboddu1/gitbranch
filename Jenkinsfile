@@ -10,8 +10,7 @@ pipeline {
       stage('branch name') {
          steps {
             readFile encoding: 'version', file: 'package.json'
-            echo env.BRANCH_NAME
-            echo ${version}       
+            echo env.BRANCH_NAME      
       }
    }
 }
