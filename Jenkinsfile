@@ -10,7 +10,7 @@ pipeline {
       stage('branch name') {
          steps {
             echo env.BRANCH_NAME
-            echo ${input}
+            echo input
       }
    }
 }
