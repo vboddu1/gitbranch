@@ -1,4 +1,5 @@
-def input= $(echo sh (script: 'cat package.json | jq .version ', , returnStdout:true).trim())
+//def input= $(echo sh (script: 'cat package.json | jq .version ', , returnStdout:true).trim())
+def input = $(cat package.json | jq .version )
 pipeline {
    agent any
    stages {
