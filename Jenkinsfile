@@ -1,15 +1,11 @@
+  
 pipeline {
    agent any
 
    stages {
-      stage('git checkout') {
+      stage('jq command') {
          steps {
-            git credentialsId: '951b62cc-d20f-479b-8b47-5bad66dc97ac', url: 'https://github.com/vboddu1/gitbranch.git'
-         }
-      }
-      stage('branch name') {
-         steps {
-            echo 'Pulling...' + env.BRANCH_NAME
+            sh label: '', script: 'jq -version'
          }
       }
    }
