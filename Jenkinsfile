@@ -9,7 +9,7 @@ pipeline {
       }
       stage('branch name') {
          environment {
-      input = sh "cat package.json|jq .version"
+      input = sh (script : "cat package.json|jq .version", returnStdout:true)
    }
          steps {
             echo env.BRANCH_NAME
