@@ -13,7 +13,7 @@ pipeline {
    }
          steps {
             echo env.BRANCH_NAME
-            echo $env.input
+            echo $input
       }
    }
 }
