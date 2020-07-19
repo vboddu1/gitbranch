@@ -2,15 +2,15 @@
 pipeline {
    agent any
    stages {
-       environment {
-      input = sh "cat package.json|jq .version"
-   }
       stage('git checkout') {
          steps {
             git branch: 'dev', credentialsId: '951b62cc-d20f-479b-8b47-5bad66dc97ac', url: 'https://github.com/vboddu1/gitbranch.git'
          }
       }
       stage('branch name') {
+         environment {
+      input = sh "cat package.json|jq .version"
+   }
          steps {
             echo env.BRANCH_NAME
             echo $input
