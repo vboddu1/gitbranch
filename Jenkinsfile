@@ -10,7 +10,7 @@ pipeline {
          steps {
             echo env.BRANCH_NAME
             //output = readJSON text: version
-            echo ${sh label: '', script: 'cat package.json|jq \'.version\''}
+            echo sh label: '', script: 'cat package.json|jq \'.version\''
       }
    }
 }
