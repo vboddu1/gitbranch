@@ -1,7 +1,9 @@
 //def input= $(echo sh (script: 'cat package.json | jq .version ', , returnStdout:true).trim())
-def input = sh "cat package.json|jq .version"
 pipeline {
    agent any
+   environment {
+      input = sh "cat package.json|jq .version"
+   }
    stages {
       stage('git checkout') {
          steps {
@@ -11,7 +13,7 @@ pipeline {
       stage('branch name') {
          steps {
             echo env.BRANCH_NAME
-            echo input
+            echo $input
       }
    }
 }
