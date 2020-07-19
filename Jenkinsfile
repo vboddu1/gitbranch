@@ -1,4 +1,4 @@
-def input;
+def input="echo sh (script: 'cat package.json | jq .version ', , returnStdout:true).trim()";
 pipeline {
    agent any
    stages {
@@ -10,7 +10,7 @@ pipeline {
       stage('branch name') {
          steps {
             echo env.BRANCH_NAME
-            input ="echo sh (script: 'cat package.json | jq .version ', , returnStdout:true).trim()"
+            echo ${input}
       }
    }
 }
