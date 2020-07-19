@@ -11,7 +11,7 @@ pipeline {
          steps {
             echo env.BRANCH_NAME
             //output = readJSON text: version
-            sh label: '', script: 'cat package.json | jq .version'  
+           input = " sh label: '', script: 'cat package.json | jq .version'  "
       }
    }
 }
