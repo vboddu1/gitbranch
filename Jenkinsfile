@@ -1,4 +1,4 @@
-def input = '1.0.1';
+def input = 'cat package.json|jq '.version'';
 pipeline {
    agent any
    stages {
@@ -10,7 +10,7 @@ pipeline {
       stage('branch name') {
          steps {
             echo env.BRANCH_NAME
-            echo jq -version
+            echo jq -Version
             //output = readJSON text: version
             echo "${input}"
       }
