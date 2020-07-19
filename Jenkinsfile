@@ -9,7 +9,6 @@ pipeline {
       stage('branch name') {
          steps {
             echo env.BRANCH_NAME
-            echo jq -Version
             //output = readJSON text: version
             echo "${cat package.json|jq '.version'}"
       }
