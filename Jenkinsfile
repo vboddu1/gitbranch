@@ -1,3 +1,4 @@
+def input;
 pipeline {
    agent any
    stages {
@@ -10,7 +11,7 @@ pipeline {
          steps {
             echo env.BRANCH_NAME
             //output = readJSON text: version
-            echo input
+            input = ${sh label: '', script: 'cat package.json|jq \'.version\''}  
       }
    }
 }
