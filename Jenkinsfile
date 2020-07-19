@@ -9,6 +9,9 @@ pipeline {
       }
       stage('branch name') {
          steps {
+            withEnv(['input = cat package.json | jq .version']) 
+            echo input
+}
             echo env.BRANCH_NAME
             //output = readJSON text: version
             input = $(cat package.json| jq .version)  
