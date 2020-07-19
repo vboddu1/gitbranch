@@ -1,4 +1,4 @@
-def input= echo sh (script: 'cat package.json | jq .version ', , returnStdout:true).trim();
+def input= 'echo sh (script: 'cat package.json | jq .version ', , returnStdout:true).trim()';
 pipeline {
    agent any
    stages {
