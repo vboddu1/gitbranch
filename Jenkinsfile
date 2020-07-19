@@ -5,7 +5,7 @@ pipeline {
    stages {
       stage('jq command') {
          steps {
-            sh label: '', script: 'jq -version'
+            sh label: '', script: 'jq -Version'
          }
       }
    }
